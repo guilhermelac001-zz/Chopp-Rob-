@@ -50,7 +50,7 @@ var app = {
           headers: {}
         };
 
-        cordova.plugin.http.sendRequest('http://localhost:2000/move_position', options, function(response) {
+        cordova.plugin.http.sendRequest('http://52.67.164.23:2000/move_position', options, function(response) {
           // prints 200
           console.log(response);
         }, function(response) {

@@ -11,6 +11,7 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cookie-parser": "^1.4.3",
+        "cordova-android": "^7.0.0",
         "cordova-browser": "^5.0.3",
         "cordova-http": "^0.3.0",
         "cordova-plugin-advanced-http": "^1.11.1",
@@ -26,7 +27,8 @@
             "cordova-plugin-advanced-http": {}
         },
         "platforms": [
-            "browser"
+            "browser",
+            "android"
         ]
     }
 }
