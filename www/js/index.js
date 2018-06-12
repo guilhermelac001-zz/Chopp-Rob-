@@ -20,12 +20,17 @@
  */
 
 
+// var server_ip =  "localhost:2000"
+//var server_ip =  "10.92.111.62:2000"
+var server_ip =  "52.67.164.23:30000"
+
+
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-        var button=document.getElementById("click")
-        button.addEventListener('click', this.button_click.bind(this), false);
+        var button=document.getElementById("click") //pega o botao criado no HTML e faz uma variavel 
+        button.addEventListener('click', this.button_click.bind(this), false); // loop que verific se houve alguma interação com o botao no HTML
     },
 
     // deviceready Event Handler
@@ -37,20 +42,26 @@ var app = {
     },
 
 
-    button_click: function () {
-        var e=document.getElementById("tipo")
-        console.log(e.options[e.selectedIndex].value)
-        var e2=document.getElementById("colarinho")
+
+
+
+    button_click: function () { 
+
+
+        //função que vai pegar as variaveis do app e dar display no console
+        var e=document.getElementById("tipo") //cria uma variavel que vai corresponder ao tipo de cerveja
+        console.log(e.options[e.selectedIndex].value) //irá printar no meu console essa variavel
+        var e2=document.getElementById("Quantidade")
         console.log(e2.options[e2.selectedIndex].value)
 
 
-        const options = {
+        const options = { //
           method: 'post',
           data: { id: e2.options[e2.selectedIndex].value , message: e.options[e.selectedIndex].value },
           headers: {}
         };
 
-        cordova.plugin.http.sendRequest('http://52.67.164.23:2000/move_position', options, function(response) {
+        cordova.plugin.http.sendRequest('http://'+server_ip+'/move_position', options, function(response) {
           // prints 200
           console.log(response);
         }, function(response) {
@@ -59,7 +70,25 @@ var app = {
 
           //prints Permission denied
           console.log(response.error);
+
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+// When the user clicks on <div>, open the popup
+    
+
 
 
 

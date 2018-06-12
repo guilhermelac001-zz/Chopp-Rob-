@@ -45,13 +45,16 @@ body {
     width:100%;
 }
 
+
+
+
 /* Portrait layout (default) */
 .app {
     background:url(/img/beer.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
+    top:45%;
+    height:100px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
@@ -62,7 +65,7 @@ body {
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-        background-position:left center;
+        background-position:center;
         padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
@@ -70,13 +73,37 @@ body {
 }
 
 h1 {
-    font-size:24px;
+/*    font-size:24px;
     font-weight:normal;
     margin:0px;
+    position:absolute;              position in the center of the screen 
+    top:-40%;
     overflow:visible;
+    padding:0px;*/
+    font-size:20px;
+    font-weight:normal;
+    position:absolute;             /* position in the center of the screen */
+    margin-top: -200%;
     padding:0px;
     text-align:center;
 }
+
+.blink {
+    font-size:11px;
+    font-weight:normal;
+    margin:0px;
+    margin-top: 10%;
+    position:absolute;             /* position in the center of the screen */
+    top:70%;
+    right:32%;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    
+    
+  }
+
+
 
 .event {
     border-radius:4px;
@@ -108,8 +135,15 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
-.blink {
+
+h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+
+
+
+
+
+
